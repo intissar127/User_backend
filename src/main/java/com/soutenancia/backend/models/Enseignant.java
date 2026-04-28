@@ -1,13 +1,15 @@
 package com.soutenancia.backend.models;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "teachers", schema = "user_service")
-public class Teacher extends User {
+@Table(name = "enseignants", schema = "public")
+@PrimaryKeyJoinColumn(name = "id")
+public class Enseignant extends User {
+
     private String specialite;
-    // getters/setters
 
     public String getSpecialite() {
         return specialite;
@@ -16,6 +18,4 @@ public class Teacher extends User {
     public void setSpecialite(String specialite) {
         this.specialite = specialite;
     }
-
-    
 }
